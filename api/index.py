@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, render_template, request
+from flask import Flask, jsonify, render_template, request, send_from_directory
 from dotenv import load_dotenv
 import google.generativeai as genai
 import os
@@ -10,6 +10,9 @@ from datetime import datetime
 
 
 # 현재 파일 기준 경로 설정
+# api/index.py 기준:
+# BASE_DIR = 프로젝트/api
+# ROOT_DIR = 프로젝트 루트
 BASE_DIR = Path(__file__).resolve().parent
 ROOT_DIR = BASE_DIR.parent
 
@@ -17,12 +20,18 @@ ROOT_DIR = BASE_DIR.parent
 load_dotenv(ROOT_DIR / ".env")
 
 # Flask 앱 생성
+# static_folder=None 으로 두고, 아래에서 직접 /static 경로를 처리합니다.
 app = Flask(
     __name__,
     template_folder=str(ROOT_DIR / "templates"),
-    static_folder=str(ROOT_DIR / "static"),
-    static_url_path="/static"
+    static_folder=None
 )
+
+
+# Vercel 환경에서 static 파일 직접 제공
+@app.route("/static/<path:filename>", endpoint="static")
+def serve_static(filename):
+    return send_from_directory(str(ROOT_DIR / "static"), filename)
 
 # Gemini API 키 가져오기
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
