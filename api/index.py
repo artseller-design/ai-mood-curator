@@ -20,10 +20,11 @@ ROOT_DIR = BASE_DIR.parent
 load_dotenv(ROOT_DIR / ".env")
 
 # Flask 앱 생성
+# index.html이 프로젝트 최상위에 있으므로 template_folder를 ROOT_DIR로 설정합니다.
 # static_folder=None 으로 두고, 아래에서 직접 /static 경로를 처리합니다.
 app = Flask(
     __name__,
-    template_folder=str(ROOT_DIR / "templates"),
+    template_folder=str(ROOT_DIR),
     static_folder=None
 )
 
@@ -33,12 +34,14 @@ app = Flask(
 def serve_static(filename):
     return send_from_directory(str(ROOT_DIR / "static"), filename)
 
+
 # Gemini API 키 가져오기
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 print("프로젝트 경로:", ROOT_DIR)
 print(".env 경로:", ROOT_DIR / ".env")
 print("API 키 로드 여부:", bool(GEMINI_API_KEY))
+
 
 # Gemini API 설정
 if GEMINI_API_KEY:
