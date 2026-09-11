@@ -8,7 +8,7 @@
   <title>감정 기반 AI 큐레이션</title>
 
   <!-- CSS 연결 -->
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="/static/style.css">
 </head>
 
 <body>
@@ -98,16 +98,17 @@
       </div>
 
       <div class="service-image">
-        <img src="{{ url_for('static', filename='images/mood_art.png') }}" alt="Mood Art">
-        "감정 기반 미술 큐레이션 이미지"
-        >
+        <picture>
+          <source media="(max-width: 768px)" srcset="/static/images/mobile_art.png">
+          <img src="/static/images/mood_art.png" alt="감정 기반 미술 큐레이션 이미지">
+        </picture>
       </div>
 
     </div>
   </section>
 
   <!-- JavaScript 연결 -->
-  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <script src="/static/script.js"></script>
 </body>
 
 </html>
