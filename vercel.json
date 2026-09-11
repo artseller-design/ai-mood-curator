@@ -2,10 +2,7 @@
   "version": 2,
   "functions": {
     "api/index.py": {
-      "includeFiles": [
-        "index.html",
-        "static/**"
-      ]
+      "includeFiles": "{index.html,static/**}"
     }
   },
   "rewrites": [
