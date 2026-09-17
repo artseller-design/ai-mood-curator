@@ -18,15 +18,13 @@ ROOT_DIR = BASE_DIR.parent
 load_dotenv(ROOT_DIR / ".env")
 
 # Flask 앱 생성
-# index.html은 프로젝트 루트에 있으므로 template_folder를 ROOT_DIR로 설정
-# static_folder를 ROOT_DIR / "static"으로 지정하여 정적 파일 자동 처리
+# Vercel은 public 폴더를 정적 파일 배포 경로로 사용합니다.
 app = Flask(
     __name__,
-    template_folder=str(ROOT_DIR),
-    static_folder=str(ROOT_DIR / "static"),
-    static_url_path="/static"
+    template_folder=str(ROOT_DIR / "public"),
+    static_folder=str(ROOT_DIR / "public"),
+    static_url_path="/static",
 )
-
 # Gemini API 키 가져오기
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
@@ -38,7 +36,7 @@ if GEMINI_API_KEY:
 # 정적 파일 fallback 라우트 (Vercel 및 로컬 환경 호환)
 @app.route("/static/<path:filename>")
 def serve_static(filename):
-    return send_from_directory(str(ROOT_DIR / "static"), filename)
+    return send_from_directory(str(ROOT_DIR / "public"), filename)
 
 
 # Gemini 응답에서 JSON만 안전하게 추출하는 함수

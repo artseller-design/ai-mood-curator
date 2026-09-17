@@ -13,3 +13,5 @@ Thumbs.db
 
 *.log
 *.code-search
+.vercel
+.env*

@@ -127,13 +127,13 @@ AI는 사용자의 문장을 분석하여 다음과 같은 정보를 제공합�
 .
 ├── api/
 │   └── index.py
-├── templates/
-│   └── index.html
-├── static/
+├── public/
+│   ├── index.html
 │   ├── style.css
 │   ├── script.js
 │   └── images/
-│       └── mood_art.png
+│       ├── mood_art.png
+│       └── mobile_art.png
 ├── requirements.txt
 ├── vercel.json
 ├── .gitignore
@@ -145,10 +145,10 @@ AI는 사용자의 문장을 분석하여 다음과 같은 정보를 제공합�
 | 파일 경로 | 설명 |
 |---|---|
 | `api/index.py` | Flask 서버 및 Gemini API 연동 코드 |
-| `templates/index.html` | 메인 웹페이지 HTML 파일 |
-| `static/style.css` | 웹페이지 스타일 파일 |
-| `static/script.js` | 프론트엔드 JavaScript 파일 |
-| `static/images/mood_art.png` | 웹페이지에 사용되는 이미지 파일 |
+| `public/index.html` | Vercel이 직접 제공하는 메인 웹페이지 |
+| `public/style.css` | 웹페이지 스타일 파일 |
+| `public/script.js` | 프론트엔드 JavaScript 파일 |
+| `public/images/` | 웹페이지에 사용되는 이미지 파일 |
 | `requirements.txt` | Python 패키지 목록 |
 | `vercel.json` | Vercel 배포 설정 파일 |
 | `.gitignore` | GitHub에 올리지 않을 파일 설정 |
@@ -300,9 +300,11 @@ http://127.0.0.1:5000
 
 ```text
 api/index.py
-templates/index.html
-static/style.css
-static/script.js
+public/index.html
+public/style.css
+public/script.js
+public/images/mood_art.png
+public/images/mobile_art.png
 requirements.txt
 vercel.json
 ```
