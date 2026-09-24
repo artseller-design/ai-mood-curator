@@ -10,13 +10,8 @@ AI Mood Curator는 사용자가 입력한 감정이나 상황을 바탕으로 Go
 
 아래 링크에서 서비스를 확인할 수 있습니다.
 
-```text
-배포 URL: https://your-project-name.vercel.app
-```
+https://ai-mood-curator-o46d.vercel.app/
 
-> 아직 배포 전이라면 위 주소는 Vercel 배포가 완료된 후 실제 주소로 수정하면 됩니다.
-
----
 
 ## 서비스 소개
 
