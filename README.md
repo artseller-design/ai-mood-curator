@@ -282,11 +282,7 @@ flask run
 
 서버 실행 후 브라우저에서 아래 주소로 접속합니다.
 
-```text
-http://127.0.0.1:5000
-```
-
----
+https://ai-mood-curator-o46d.vercel.app/
 
 ## Vercel 배포 방법
 
