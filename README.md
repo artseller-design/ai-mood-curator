@@ -529,12 +529,11 @@ gitleaks detect --source . --verbose
 ## GitHub 저장소 실제 링크가 플레이스홀더 형태라 실재 리포지토리 확인이 불가함
 
 * Repository
-
-- GitHub: https://github.com/kimstudent/emotion-art-music
-
+- GitHub: https://github.com/artseller-design/ai-mood-curator
 
 
-## 구조를 선택한 이유와 프론트/백 분리의 장점에 대한 상세 설명이 부족함
+
+## 구조를 선택한 이유와 프론트/백 분리의 장점에 대한 상세 설명
 
 
 ## 시스템 구조
