@@ -342,6 +342,9 @@ Value: AIzaSyxxxxxxxxxxxxxxxxxxxxxxxx
 
 ```text
 https://your-project-name.vercel.app
+
+https://ai-mood-curator-o46d.vercel.app/
+
 ```
 
 README의 배포 URL 부분을 실제 주소로 수정합니다.
@@ -526,8 +529,7 @@ gitleaks detect --source . --verbose
 
 
 
-## GitHub 저장소 실제 링크가 플레이스홀더 형태라 실재 리포지토리 확인이 불가함
-
+## 실재 리포지토리 확인
 * Repository
 - GitHub: https://github.com/artseller-design/ai-mood-curator
 
@@ -692,7 +694,7 @@ python app.py
 - [ ] 긴 입력값 테스트 시 서버가 중단되지 않는가?
 - [ ] README의 응답 스키마와 실제 응답 JSON 구조가 일치하는가?
 
-- [ ] 
+
 
 ## HTML/CSS/JS의 각 역할을 구체적 예시(어떤 파일이 구조/스타일/동작을 담당하는지)
 
@@ -961,8 +963,7 @@ No leaks found
 
 ## GitHub 저장소
 
-- GitHub: https://github.com/kimstudent/emotion-art-music
-
+- GitHub: https://github.com/artseller-design/ai-mood-curator
 ---
 
 ## 시스템 구조
